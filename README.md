@@ -2,7 +2,7 @@
 
 1. Above the list of files, click <>Code.
 2. Copy the URL for the repository. (HTTPS)
-3. Right click and chose 'Git Bash Here'. (on loacation you want in your device)
+3. Right click and chose 'Open Git Bash Here'. (on loacation you want in your device)
 4. Type git clone, and then paste the URL you copied earlier.
 5. Press Enter to create your local clone.
 
