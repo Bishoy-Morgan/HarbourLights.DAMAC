@@ -9,6 +9,7 @@
 after these steps the files should be on the loacation you have chose.
 
 # Install dependencies 
-6. Still in Git bash and write 'npm i' or 'npm install'.
-7. write 'npm start' to run the website.
+1. Opne the file of the project.
+2. Right click and chose 'Open Git Bash Here' then write on it 'npm install' or 'npm i'.
+2. write on git bash 'npm start' to run the website on the browser.
    
