@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  
+}
+:root {
+  --blue: #00357B;
+  --white: #FCFCFC;
+  --shiny: linear-gradient(-75deg, rgba(1, 21, 46, 0.986) 30%, rgba(24, 141, 249, .01) 40%, rgb(0, 19, 44) 70%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgba(6, 35, 73, .2);
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 50px;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+
+}
+
+main {
+  position: relative;
+  background-image: url(../public/Images/Rectangle\ 108.png);
+  background-size: cover;
+}
+
+main::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(6, 35, 73, .85), transparent);
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    background-image: url(../public/Images/Rectangle\ 122.png);
+    background-size: cover;
+    background-position: right top;
+  }
+  main::after {
+    background-image: linear-gradient(to bottom, rgba(6, 35, 73, .9), rgba(24, 141, 249,.4), transparent);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+    font-family: "Oswald", sans-serif;
+} 
+
+.img-container::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.price-container::before, .shiny-border::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100.5%;
+  height: 100.5%;
+  background: transparent;
+  border: 1px solid var(--white);
+  border-radius: 12px;
+  opacity: 0;
 }
 
-@keyframes App-logo-spin {
+.shiny-border::before {
+  border-radius: 24px;
+  border: 1px solid var(--blue);
+}
+
+.shiny-border:hover.shiny-border::before, .price-container:hover.price-container::before {
+  -webkit-mask-image:var(--shiny);
+  mask-image: var(--shiny);
+  -webkit-mask-size: 200%;
+  opacity: 1;
+  mask-size: 200%;
+  animation: shine 3s infinite ease-in-out;
+}
+
+@keyframes shine {
   from {
-    transform: rotate(0deg);
+    mask-position: 150%;
+    -webkit-mask-position: 150%;
   }
   to {
-    transform: rotate(360deg);
+    mask-position: -50%;
+    -webkit-mask-position: -50%;
   }
 }

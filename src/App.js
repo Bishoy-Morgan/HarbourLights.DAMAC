@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Lenis from 'lenis'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import MainSection from './Components/MainSection';
+import Features from './Components/Features';
+import Amenities from './Components/Amenities';
+import ImageSlider from './Components/ImageSlider';
+import Footer from './Components/Footer';
 
 function App() {
+  gsap.registerPlugin(ScrollTrigger)
+  const lenis = new Lenis()
+  lenis.on('scroll', ScrollTrigger.update)
+  gsap.ticker.add((time)=>{
+    lenis.raf(time * 1000)
+  })
+  gsap.ticker.lagSmoothing(0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MainSection />
+      <Features />
+      <Amenities />
+      <ImageSlider />
+      <Footer />
+    </>
   );
 }
 
