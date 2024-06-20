@@ -9,7 +9,7 @@
 after these steps the files should be on the loacation you have chose.
 
 # Install dependencies 
-1. Opne the file of the project.
+1. Opne the file of the project (you have just cloned).
 2. Right click and chose 'Open Git Bash Here' then write on it 'npm install' or 'npm i'.
 2. write on git bash 'npm start' to run the website on the browser.
    
